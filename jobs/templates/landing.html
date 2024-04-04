@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application Portal</title>
+    <title>Job Seeker Hub
+    </title>
     <style>
-        h1{
-            margin-top:50px;
+        h1 {
+            margin-top: 50px;
             text-align: center;
         }
-        h2{
-            margin:25px;
+
+        h2 {
+            margin: 25px;
             text-align: center;
             color: #0953e6;
             font-family: 'roboto';
         }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Change background color */
+            background-color: #000000; /* Use multiple gradient colors */
+            color: white;
             color: #333; /* Change text color */
         }
 
         .top-nav {
-            background-color: #0952e5; /* Change top navigation background color */
+            background-color: #02ee94; /* Change top navigation background color */
             overflow: hidden;
             position: fixed;
             top: 0;
@@ -49,11 +53,11 @@
         }
 
         .job-listing {
-            background-color: #fff; /* Change job listing background color */
+            background-color: #ffffff; /* Change job listing background color */
             padding: 20px;
             margin: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add box shadow */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
         }
 
         .job-listing h3 {
@@ -61,7 +65,7 @@
         }
 
         .bottom-nav {
-            background-color: #0952e5; /* Change bottom navigation background color */
+            background-color: #02ee94; /* Change bottom navigation background color */
             overflow: hidden;
             position: fixed;
             bottom: 0;
@@ -69,7 +73,6 @@
             right: 0;
             z-index: 1000;
             margin-top: 40px;
-
         }
 
         .bottom-nav a {
@@ -84,37 +87,59 @@
 <body>
 
 <div class="top-nav">
-     <img src="images/sign-in" alt="">
-    <a href="#" style="font-style: bold; font-weight: 600" font-size="64px"> Job Application Portal</a>
+    <a href="#" style="font-style: bold; font-weight: 600" font-size="64px"> Job Seeker Hub
+    </a>
     <a href="#">Home</a>
     <a href="#">Jobs</a>
     <a href="#">Employers</a>
     <a href="#">Candidates</a>
     <a href="#">About</a>
-    <a href="#" class="sign-in">Sign In <img src="images/sign-in" alt=""></a>
+    
+    <a href="{% url 'logout' %}" class="sign-in">Logout</a>
+  
+   
+   
 </div>
 
 <div class="content">
     <div style="margin: 20px;">
-        <h1>Turn Your Career Dreams into Reality</h1>
+        <h1 style="font-family: poppins; color: #ffff;">Turn Your Career Dreams into Reality</h1>
     </div>
 
     <div style="display: flex; justify-content: space-around;">
         <div class="job-listing">
             <h2><img src="" alt="">  Hiring?</h2>
             <p>Are you an employer looking to hire talented individuals? Post your job listings and find the right candidates for your company.</p>
-            <a href="#">Post a Job</a>
+            <a href="{% url 'hr_page' %}">Post a Job</a>
         </div>
+        <script>
+            // Get the authentication status from the template
+            const isAuthenticated = {% if isAuthenticated %}true{% else %}false{% endif %};
+
+            // Get the login link element
+            const loginLink = document.querySelector('.top-nav .sign-in');
+
+            // Update the link text based on authentication status
+            if (isAuthenticated) {
+                // If authenticated, change text to "Logout"
+                loginLink.textContent = "Logout";
+            } else {
+                // If not authenticated, text remains "Login"
+                loginLink.textContent = "Login";
+            }
+        </script>
+         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+         <dotlottie-player src="https://lottie.host/8d7d84ec-9c24-4125-be6f-0d4bd7776416/87pnByWYUf.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
         <div class="job-listing">
             <h2>Job Seeker?</h2>
             <p>Are you looking for new career opportunities? Browse through our job listings and apply for your dream job today.</p>
             <a href="#">Browse Jobs</a>
         </div>
     </div>
- <h2>Latest Job Listings<img width="32" height="32" src="https://img.icons8.com/color/48/fire-element--v1.png" alt="fire-element--v1"/></h2>
+    <h2>Latest Job Listings<img width="32" height="32" src="https://img.icons8.com/color/48/fire-element--v1.png" alt="fire-element--v1"/></h2>
     <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
         <div class="job-listing">
-            
             <div class="job-listing">
                 <h3>Job Title 1</h3>
                 <p>Description of the job...</p>
@@ -124,7 +149,6 @@
             </div>
         </div>
         <div class="job-listing">
-         
             <div class="job-listing">
                 <h3>Job Title 2</h3>
                 <p>Description of the job...</p>
@@ -133,8 +157,8 @@
                 <a href="#">Apply Now</a>
             </div>
         </div>
+
         <div class="job-listing">
-        
             <div class="job-listing">
                 <h3>Job Title 3</h3>
                 <p>Description of the job...</p>
@@ -144,7 +168,6 @@
             </div>
         </div>
         <div class="job-listing">
-            <h2>Latest Job Listings</h2>
             <div class="job-listing">
                 <h3>Job Title 4</h3>
                 <p>Description of the job...</p>

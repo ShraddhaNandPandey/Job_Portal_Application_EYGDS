@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-nav {
+            background-color: #f52a86;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .top-nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            padding-top: 50px;
+        }
+
+        .profile-details {
+            width: 30%;
+            padding: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .job-listings {
+            width: 70%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-details h2,
+        .job-listings h2 {
+            color: #0953e6;
+            margin-top: 0;
+        }
+
+        .job-listings .job-listing {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .job-listings .job-listing h3 {
+            margin-top: 0;
+            color: #0953e6;
+        }
+
+        .job-listings .job-listing p {
+            margin: 0;
+        }
+
+        .bottom-nav {
+            background-color: #0952e5;
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            margin-top: 40px;
+        }
+
+        .bottom-nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            color: #0953e6;
+            margin-top: 0;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #0952e5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <a href="#" style="font-style: bold; font-weight: 600; font-size: 20px;">Job Portal</a>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+</div>
+
+<div class="container">
+    <div class="profile-details">
+        <h2>Candidate Profile</h2>
+        <!-- Display candidate details here -->
+        <!-- Example candidate details -->
+        <p>Name: Shraddha Nand Pandey</p>
+        <p>Email: shraddha@gmail.com</p>
+        <!-- Add more candidate details as needed -->
+        <h3>Resume</h3>
+        <!-- Display uploaded resume -->
+        <!-- Add a link to download the resume -->
+        <p><a href="#">Download Resume</a></p>
+        <h3>Applied Jobs</h3>
+        <!-- Display list of applied jobs -->
+        <!-- Example job listing -->
+        <div class="job-listing">
+            <h4>Job Title 1</h4>
+            <p>Description of the job...</p>
+            <p>Location: City, Country</p>
+            <p>Status: Applied</p>
+        </div>
+        <!-- Repeat the above structure for each applied job -->
+        <!-- Add an option to edit profile details and upload photo -->
+        <div class="form-container">
+            <h2>Edit Details</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <div class="job-listings">
+        <h2>Applied Jobs</h2>
+        <!-- Display available job listings here -->
+        <!-- Example job listing -->
+        <div class="job-listing">
+            <h3>Job Title 1</h3>
+            <p>Description of the job...</p>
+            <p>Location: City, Country</p>
+            <p>Salary: $XXX,XXX</p>
+            <a href="#">Apply Now</a>
+        </div>
+        <!-- Repeat the above structure for each job listing -->
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">FAQ</a>
+</div>
+
+</body>
+</html>
